@@ -1,28 +1,31 @@
-import React from 'react'
-import Letras from './Components/Letras';
-import PaneLetras from './Components/PaneLetras';
-import './index.css'
+import {useState} from 'react';
+
+import './index.css';
+import GameBoard from './Components/game-board'
+import WordSelect from './Components/word-select'
+
 
 export default function App() {
+    const [secretWord, setSecretWord] = useState('');
 
-  const [isActive, setActive] = React.useState(false);
+    return ( 
+        <div className="app-container">
+            <h1>Welcome to Hangman!</h1>
+            <p>Do you want to play a game?</p>
 
-  const changeClass = () => {
-    setActive(!isActive);
-    console.log('button hiden')
-  };
+            <div>
 
-  return (
-    <div className='app-container'>
-      <PaneLetras
-      className='square'
-      />
-      <br />
-    <Letras
-    className={isActive ? "hidden-btn" : "letras"}
-    onClick={changeClass}
-    />  
+                <WordSelect
+                    isShown={!secretWord}
+                    wordSelected={val => setSecretWord(val)}
+                />
 
-    </div>
-)
+                <GameBoard 
+                    secretWord={secretWord}
+                    maxErrors={6} 
+                    isShown={secretWord}
+                />
+            </div>
+        </div>
+    );
 }

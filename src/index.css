@@ -24,11 +24,10 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  margin: 2rem;
   display: flex;
   place-items: center;
   min-width: 40rem;
-  min-height: 100vh;
 }
 
 button {
@@ -62,28 +61,47 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
 .app-container {
-  width: 20rem;
-  height: 1rem;
+  width: 400px;
 }
 
-.div-panel {
-  width: 50rem;
-  height: 2rem;
-  margin: 3rem;
+.flex {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.5rem;
 }
 
-.div-letras {
-  width: 50rem;
-  height: auto;
-  margin: 1rem;
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
-.hidden-btn {
+.mt-10 {
+  margin-top: 10px;
+}
+
+.letter {
+  border: 1px solid gray;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  width: 34px;
+  text-align: center;
+}
+
+.button {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  width: 34px;
+  text-align: center;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.guessed {
+  display: none;
+}
+
+.hidden {
   display: none;
 }
